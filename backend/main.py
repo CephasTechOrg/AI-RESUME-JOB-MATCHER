@@ -1,0 +1,43 @@
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+
+# Remove relative imports and use absolute imports
+from routers.evaluate import router as evaluate_router
+
+app = FastAPI(
+    title="AI Resume & Job Match Evaluator",
+    description="Evaluate how well a resume matches a job description using AI",
+    version="1.0.0"
+)
+
+# CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # For development
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# Include routers
+app.include_router(evaluate_router)
+
+@app.get("/")
+async def root():
+    return {
+        "message": "AI Resume & Job Match Evaluator API",
+        "version": "1.0.0",
+        "endpoints": {
+            "evaluate": "/evaluate/",
+            "upload": "/evaluate/upload",
+            "job_templates": "/evaluate/job-templates"
+        }
+    }
+
+@app.get("/health")
+async def health_check():
+    return {"status": "healthy"}
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)

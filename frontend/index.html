@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Resume & Job Match Evaluator</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Navigation Bar -->
+        <nav class="navbar">
+            <div class="nav-brand">
+                <i class="fas fa-robot"></i>
+                <span>AI Resume Matcher</span>
+            </div>
+            <div class="nav-links">
+                <a href="#input-section" class="nav-link active" data-section="input">
+                    <i class="fas fa-upload"></i>
+                    <span>Upload</span>
+                </a>
+                <a href="#results-section" class="nav-link" data-section="results">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Results</span>
+                </a>
+            </div>
+        </nav>
+
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                </div>
+                <h1>AI Resume & Job Match Evaluator</h1>
+                <p class="tagline">Advanced AI-powered analysis to optimize your job application success</p>
+                <div class="header-stats">
+                    <div class="stat">
+                        <i class="fas fa-bolt"></i>
+                        <span>Instant Analysis</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Detailed Insights</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-lightbulb"></i>
+                        <span>Smart Suggestions</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <!-- Input Section -->
+            <section id="input-section" class="card active-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-briefcase"></i> Job Information</h2>
+                    <p>Provide job details and upload your resume for comprehensive AI analysis</p>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="job-template"><i class="fas fa-file-alt"></i> Select Job Template
+                            (Optional):</label>
+                        <select id="job-template" onchange="loadJobTemplate()">
+                            <option value="">-- Select a Template --</option>
+                            <option value="software_engineer">Software Engineer</option>
+                            <option value="data_scientist">Data Scientist</option>
+                            <option value="product_manager">Product Manager</option>
+                            <option value="frontend_developer">Frontend Developer</option>
+                            <option value="backend_developer">Backend Developer</option>
+                            <option value="full_stack_developer">Full Stack Developer</option>
+                            <option value="devops_engineer">DevOps Engineer</option>
+                            <option value="cloud_architect">Cloud Architect</option>
+                            <option value="cybersecurity_analyst">Cybersecurity Analyst</option>
+                            <option value="ai_ml_engineer">AI/ML Engineer</option>
+                            <option value="mobile_developer">Mobile App Developer</option>
+                            <option value="ux_ui_designer">UX/UI Designer</option>
+                            <option value="qa_engineer">QA Engineer</option>
+                            <option value="project_manager">Project Manager</option>
+                            <option value="financial_analyst">Financial Analyst</option>
+                            <option value="accountant">Accountant</option>
+                            <option value="marketing_manager">Marketing Manager</option>
+                            <option value="sales_representative">Sales Representative</option>
+                            <option value="hr_manager">HR Manager</option>
+                            <option value="customer_support">Customer Support Specialist</option>
+                            <option value="content_writer">Content Writer</option>
+                            <option value="digital_marketer">Digital Marketing Specialist</option>
+                            <option value="business_analyst">Business Analyst</option>
+                            <option value="network_administrator">Network Administrator</option>
+                            <option value="system_administrator">System Administrator</option>
+                            <option value="database_administrator">Database Administrator</option>
+                            <option value="technical_support">Technical Support Specialist</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="job-title"><i class="fas fa-tag"></i> Job Title:</label>
+                        <input type="text" id="job-title" placeholder="e.g., Senior Software Engineer" required>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="job-description"><i class="fas fa-file-text"></i> Job Description:</label>
+                        <div class="textarea-container">
+                            <textarea id="job-description" rows="8" placeholder="Paste the job description here..."
+                                required></textarea>
+                            <div class="textarea-counter">
+                                <span id="char-count">0</span> characters
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label><i class="fas fa-file-upload"></i> Upload Resume:</label>
+                        <div class="file-upload-area" id="file-upload-area">
+                            <div class="upload-content">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <p>Drag & Drop your resume here</p>
+                                <span>Supports PDF and DOCX files (Max 5MB)</span>
+                                <button type="button" class="browse-btn">Browse Files</button>
+                            </div>
+                            <input type="file" id="resume-upload" accept=".pdf,.docx" required>
+                        </div>
+                        <div class="file-info" id="file-info"></div>
+                    </div>
+                </div>
+
+                <button id="evaluate-btn" onclick="evaluateResume()" class="primary-btn">
+                    <i class="fas fa-chart-line"></i> Analyze Resume Match
+                </button>
+            </section>
+
+            <!-- Results Section -->
+            <section id="results-section" class="card hidden results-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-chart-bar"></i> Evaluation Results</h2>
+                    <p>Comprehensive AI analysis of your resume match with the job description</p>
+                </div>
+
+                <!-- Overall Score -->
+                <div class="score-card">
+                    <div class="overall-score">
+                        <div class="score-circle">
+                            <div class="score-circle-inner">
+                                <span id="overall-score">0</span>
+                                <small>Match Score</small>
+                            </div>
+                        </div>
+                        <div class="score-text">
+                            <h3>Overall Match Score</h3>
+                            <p>Based on comprehensive analysis of skills, experience, and requirements matching</p>
+                            <div class="score-breakdown">
+                                <div class="breakdown-item">
+                                    <span class="breakdown-label">Skills Match</span>
+                                    <div class="breakdown-bar">
+                                        <div class="breakdown-progress" style="width: 0%"></div>
+                                    </div>
+                                </div>
+                                <div class="breakdown-item">
+                                    <span class="breakdown-label">Experience</span>
+                                    <div class="breakdown-bar">
+                                        <div class="breakdown-progress" style="width: 0%"></div>
+                                    </div>
+                                </div>
+                                <div class="breakdown-item">
+                                    <span class="breakdown-label">Keywords</span>
+                                    <div class="breakdown-bar">
+                                        <div class="breakdown-progress" style="width: 0%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Stats -->
+                <div class="quick-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-value" id="matched-skills">0</span>
+                            <span class="stat-label">Skills Matched</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-value" id="missing-keywords-count">0</span>
+                            <span class="stat-label">Missing Keywords</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-value" id="suggestions-count">0</span>
+                            <span class="stat-label">Suggestions</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts -->
+                <div class="charts-container">
+                    <div class="chart-card">
+                        <h4><i class="fas fa-chart-pie"></i> Detailed Scores Breakdown</h4>
+                        <div class="chart-wrapper">
+                            <canvas id="scoresChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detailed Scores -->
+                <div class="scores-section">
+                    <h4><i class="fas fa-star"></i> Category Scores</h4>
+                    <div class="scores-grid" id="scores-grid"></div>
+                </div>
+
+                <!-- Missing Keywords -->
+                <div class="analysis-card">
+                    <div class="card-header">
+                        <h4><i class="fas fa-search"></i> Missing Keywords & Skills</h4>
+                        <button class="copy-btn" onclick="copyKeywords()">
+                            <i class="fas fa-copy"></i> Copy
+                        </button>
+                    </div>
+                    <p class="card-description">These keywords from the job description were not found in your resume
+                    </p>
+                    <div id="keywords-list" class="keywords-list"></div>
+                </div>
+
+                <!-- Suggestions -->
+                <div class="analysis-card">
+                    <h4><i class="fas fa-lightbulb"></i> Improvement Suggestions</h4>
+                    <p class="card-description">Actionable recommendations to improve your resume match</p>
+                    <ul id="suggestions-list" class="suggestions-list"></ul>
+                </div>
+
+                <!-- Summary -->
+                <div class="analysis-card">
+                    <h4><i class="fas fa-file-alt"></i> AI Summary</h4>
+                    <p class="card-description">Comprehensive analysis of your resume match</p>
+                    <div class="summary-content">
+                        <i class="fas fa-quote-left"></i>
+                        <p id="summary-text"></p>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button onclick="resetEvaluation()" class="secondary-btn">
+                        <i class="fas fa-redo"></i> Evaluate Another Resume
+                    </button>
+                    <button onclick="window.print()" class="tertiary-btn">
+                        <i class="fas fa-print"></i> Print Results
+                    </button>
+                    <button onclick="downloadResults()" class="primary-btn">
+                        <i class="fas fa-download"></i> Export Results
+                    </button>
+                </div>
+            </section>
+
+            <!-- Loading Spinner -->
+            <div id="loading" class="loading hidden">
+                <div class="loading-content">
+                    <div class="spinner-container">
+                        <div class="spinner"></div>
+                        <div class="spinner-ring"></div>
+                    </div>
+                    <h3>AI Analysis in Progress</h3>
+                    <p>Our AI is carefully analyzing your resume and job description...</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <div class="loading-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">
+                        <i class="fas fa-robot"></i>
+                        <span>AI Resume Matcher</span>
+                    </div>
+                    <p>Advanced AI-powered resume evaluation and job matching system</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h5>Product</h5>
+                        <a href="#">Features</a>
+                        <a href="#">How it Works</a>
+                        <a href="#">Pricing</a>
+                    </div>
+                    <div class="footer-section">
+                        <h5>Company</h5>
+                        <a href="#">About</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Contact</a>
+                    </div>
+                    <div class="footer-section">
+                        <h5>Support</h5>
+                        <a href="#">Help Center</a>
+                        <a href="#">Documentation</a>
+                        <a href="#">API Status</a>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/CephasTechOrg" class="social-link" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 CephasTechOrg. All rights reserved.</p>
+                    <div class="footer-legal">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast hidden">
+        <div class="toast-content">
+            <i class="fas fa-check-circle"></i>
+            <span id="toast-message"></span>
+        </div>
+    </div>
+
+    <script src="static/js/jobs.js"></script>
+    <script src="static/js/visualization.js"></script>
+    <script src="static/js/main.js"></script>
+</body>
+
+</html>
