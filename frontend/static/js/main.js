@@ -30,7 +30,7 @@ function initializeApp() {
 // Enhanced file upload with drag and drop
 function initializeFileUpload() {
     const fileUploadArea = document.getElementById('file-upload-area');
-    const fileInput = document.getElementById('resume-upload');
+    const fileInput = document.getElementById('fpload');
     const browseBtn = fileUploadArea.querySelector('.browse-btn');
 
     // Click browse button to trigger file input
