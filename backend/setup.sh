@@ -39,7 +39,7 @@ echo "Upgrading pip and setuptools..."
 pip install --upgrade pip setuptools wheel
 
 # -------------------------
-# 4. Install dependencies
+# 4. Install dependencie
 # -------------------------
 echo "Installing dependencies..."
 
