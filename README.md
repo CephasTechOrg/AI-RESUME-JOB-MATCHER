@@ -13,8 +13,7 @@
 <p align="center">
   <a href="#features">Features</a> •
   <a href="#installation">Installation</a> •
-  <a href="#usage">Usage</a> •
-  <a href="#api-documentation">API</a> •
+  <a href="#frontend-design">Frontend</a> •
   <a href="#screenshots">Screenshots</a>
 </p>
 
@@ -25,13 +24,9 @@
 - [Features](#features)
 - [Tech Stack](#tech-stack)
 - [Installation](#installation)
-- [Quick Start](#quick-start)
 - [Project Structure](#project-structure)
-- [API Documentation](#api-documentation)
 - [Frontend Design](#frontend-design)
 - [Screenshots](#screenshots)
-- [Configuration](#configuration)
-- [Troubleshooting](#troubleshooting)
 - [Future Enhancements](#future-enhancements)
 - [Contributing](#contributing)
 - [License](#license)
@@ -125,10 +120,6 @@
   🌐 Modern web browser
 </p>
 
----
-
-<h2 align="center">💡 Quick Start</h2>
-
 ```bash
 # Clone the repository
 git clone https://github.com/YourUsername/AI-RESUME-JOB-MATCHER.git
@@ -168,15 +159,6 @@ AI-RESUME-JOB-MATCHER/
 
 ---
 
-<h2 align="center">🧩 API Documentation</h2>
-
-<p align="center">
-  Interactive API docs available at:  
-  👉 <a href="http://127.0.0.1:8000/docs">http://127.0.0.1:8000/docs</a> (Swagger UI)
-</p>
-
----
-
 <h2 align="center">🎨 Frontend Design</h2>
 
 <p align="center">
@@ -190,25 +172,6 @@ AI-RESUME-JOB-MATCHER/
 <p align="center">
   *(Add your screenshots here, e.g. dashboard preview, upload form, analytics chart, etc.)*
 </p>
-
----
-
-<h2 align="center">⚙️ Configuration</h2>
-
-```env
-DEEPSEEK_API_KEY=your_api_key_here
-PORT=8000
-```
-
----
-
-<h2 align="center">🧰 Troubleshooting</h2>
-
-| Issue | Possible Fix |
-|--------|---------------|
-| API not running | Check FastAPI server status (`uvicorn main:app --reload`) |
-| File upload fails | Ensure correct file type (PDF/DOCX) |
-| AI not responding | Verify `DEEPSEEK_API_KEY` in `.env` file |
 
 ---
 
@@ -236,4 +199,3 @@ PORT=8000
   © 2025 <strong>Your Name</strong>. All rights reserved.  
   Licensed under the <a href="https://opensource.org/licenses/MIT">MIT License</a>.
 </p>
-
