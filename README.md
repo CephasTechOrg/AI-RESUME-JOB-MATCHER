@@ -188,12 +188,6 @@ AI-RESUME-JOB-MATCHER/
 
 ---
 
-<h2 align="center">🤝 Contributing</h2>
-
-<p align="center">
-  Contributions are welcome!  
-  Please fork this repository and submit a pull request for review.
-</p>
 
 ---
 
@@ -206,4 +200,4 @@ AI-RESUME-JOB-MATCHER/
 
 ---
 
-<h3 align="center">❤️ Made with love by CephasRechOrg</h3>
+<h3 align="center"> Made with ❤️ by CephasTechOrg</h3>
