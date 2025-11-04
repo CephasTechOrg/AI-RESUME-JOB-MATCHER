@@ -120,21 +120,6 @@
   🌐 Modern web browser
 </p>
 
-```bash
-# Clone the repository
-git clone https://github.com/YourUsername/AI-RESUME-JOB-MATCHER.git
-
-# Navigate into the project directory
-cd AI-RESUME-JOB-MATCHER
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Run the FastAPI server
-uvicorn main:app --reload
-```
-
----
 
 <h2 align="center">📁 Project Structure</h2>
 
@@ -170,7 +155,26 @@ AI-RESUME-JOB-MATCHER/
 <h2 align="center">🖼 Screenshots</h2>
 
 <p align="center">
-  *(Add your screenshots here, e.g. dashboard preview, upload form, analytics chart, etc.)*
+  <img src="https://github.com/CephasTechOrg/AI-RESUME-JOB-MATCHER/blob/main/assets/Screenshot_4-11-2025_164115_.jpeg" width="22%" />
+  <img src="https://github.com/CephasTechOrg/AI-RESUME-JOB-MATCHER/blob/main/assets/Screenshot_4-11-2025_164147_.jpeg" width="22%" />
+  <img src="https://github.com/CephasTechOrg/AI-RESUME-JOB-MATCHER/blob/main/assets/Screenshot_4-11-2025_164211_.jpeg" width="22%" />
+  <img src="https://github.com/CephasTechOrg/AI-RESUME-JOB-MATCHER/blob/main/assets/Screenshot_4-11-2025_164242_.jpeg" width="22%" />
+</p>
+
+<p align="center">
+  <img src="https://github.com/CephasTechOrg/AI-RESUME-JOB-MATCHER/blob/main/assets/Screenshot_4-11-2025_164314_.jpeg" width="22%" />
+  <img src="https://github.com/CephasTechOrg/AI-RESUME-JOB-MATCHER/blob/main/assets/Screenshot_4-11-2025_164333_.jpeg" width="22%" />
+  <img src="https://github.com/CephasTechOrg/AI-RESUME-JOB-MATCHER/blob/main/assets/Screenshot_4-11-2025_164415_.jpeg" width="22%" />
+  <img src="https://github.com/CephasTechOrg/AI-RESUME-JOB-MATCHER/blob/main/assets/Screenshot_4-11-2025_16442_.jpeg" width="22%" />
+</p>
+
+---
+
+<h2 align="center">🖥 Desktop View</h2>
+
+<p align="center">
+  <img src="https://github.com/CephasTechOrg/AI-RESUME-JOB-MATCHER/blob/main/assets/desk.jpeg" width="45%" />
+  <img src="https://github.com/CephasTechOrg/AI-RESUME-JOB-MATCHER/blob/main/assets/desk1.jpeg" width="45%" />
 </p>
 
 ---
@@ -196,6 +200,10 @@ AI-RESUME-JOB-MATCHER/
 <h2 align="center">📜 License</h2>
 
 <p align="center">
-  © 2025 <strong>Your Name</strong>. All rights reserved.  
+  © 2025 <strong>CephasRechOrg</strong>. All rights reserved.  
   Licensed under the <a href="https://opensource.org/licenses/MIT">MIT License</a>.
 </p>
+
+---
+
+<h3 align="center">❤️ Made with love by CephasRechOrg</h3>
