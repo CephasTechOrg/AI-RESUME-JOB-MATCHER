@@ -1,1 +1,2 @@
-
+# Ignore Python bytecode files
+.env
