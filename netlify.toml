@@ -4,4 +4,5 @@
   publish = "backend"
 
 [build.environment]
-  PYTHON_VERSION = "3.10"
+  MISE_PYTHON_COMPILE = "false"
+  PIP_ROOT_USER_ACTION = "ignore"
