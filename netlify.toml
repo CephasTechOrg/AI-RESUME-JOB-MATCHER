@@ -1,3 +1,3 @@
 [build]
   publish = "backend"
-  command = "bash .netlify/build.sh"
+  command = "bash ./backend/.netlify/build.sh"
