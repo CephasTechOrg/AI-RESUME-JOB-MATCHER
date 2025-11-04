@@ -1,41 +1,37 @@
 #!/usr/bin/env bash
-# setup.sh
-# Self-contained setup for Render Free Plan
-
-# Exit immediately if a command fails
 set -e
 
 echo "Starting setup..."
 
-# Install pyenv (for managing Python versions)
+# Install pyenv if not already installed
 if [ ! -d "$HOME/.pyenv" ]; then
-    echo "Installing pyenv..."
     git clone https://github.com/pyenv/pyenv.git ~/.pyenv
     git clone https://github.com/pyenv/pyenv-doctor.git ~/.pyenv/plugins/pyenv-doctor
     git clone https://github.com/pyenv/pyenv-update.git ~/.pyenv/plugins/pyenv-update
     git clone https://github.com/pyenv/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
 fi
 
-# Load pyenv into the shell
+# Load pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - bash)"
 eval "$(pyenv virtualenv-init -)"
 
-# Install Python 3.12.13 (most compatible with Render Free Plan)
-if ! pyenv versions | grep -q "3.12.13"; then
-    echo "Installing Python 3.12.13..."
-    pyenv install 3.12.13
+# Install a safe Python version for Render Free Plan
+PYTHON_VERSION=3.11.8
+if ! pyenv versions | grep -q "$PYTHON_VERSION"; then
+    echo "Installing Python $PYTHON_VERSION..."
+    pyenv install $PYTHON_VERSION
 fi
 
-pyenv global 3.12.13
+pyenv global $PYTHON_VERSION
 python --version
 pip --version
 
-# Upgrade pip to latest
+# Upgrade pip
 python -m pip install --upgrade pip
 
-# Install all required Python packages (safe versions)
+# Install dependencies (safe versions)
 pip install --no-cache-dir \
     fastapi==0.104.1 \
     uvicorn==0.24.0 \
@@ -47,4 +43,4 @@ pip install --no-cache-dir \
     pydantic==2.5.3 \
     python-dotenv==1.0.0
 
-echo "Setup complete! ✅ Python and dependencies are installed."
+echo "Setup complete! ✅ Python and dependencies installed."
