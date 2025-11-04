@@ -1,3 +1,7 @@
 [build]
-  publish = "backend"
+  base = ""
   command = "bash ./backend/.netlify/build.sh"
+  publish = "backend"
+
+[build.environment]
+  PYTHON_VERSION = "3.11"
