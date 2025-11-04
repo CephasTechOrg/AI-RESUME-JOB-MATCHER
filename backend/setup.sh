@@ -13,10 +13,20 @@ pyenv global $PYTHON_VERSION
 # 2. Upgrade pip, setuptools, wheel
 pip install --upgrade pip setuptools wheel
 
-# 3. Install all dependencies globally
-pip install fastapi==0.104.1 uvicorn==0.23.2 python-multipart==0.0.6 \
-            PyPDF2==3.0.1 python-docx==0.8.11 requests==2.31.0 \
-            pydantic==2.5.3 python-dotenv==1.0.0
+# -------------------------
+# 4. Install dependencies
+# -------------------------
+echo "Installing dependencies..."
+
+# Use compatible versions to avoid maturin/Rust compilation
+pip install fastapi==0.104.1 \
+            uvicorn==0.23.2 \
+            python-multipart==0.0.6 \
+            PyPDF2==3.0.1 \
+            python-docx==0.8.11 \
+            requests==2.31.0 \
+            pydantic==2.5.3 \
+            python-dotenv==1.0.0
 
 echo "Setup complete. Python version: $(python --version)"
 echo "uvicorn location: $(which uvicorn)"
