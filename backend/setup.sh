@@ -1,48 +1,50 @@
-#!/bin/bash
-set -e  # Exit immediately if a command exits with a non-zero status
+#!/usr/bin/env bash
+# setup.sh
+# Self-contained setup for Render Free Plan
 
-# -------------------------------
-# 1️⃣ Specify Python version
-# -------------------------------
-PYTHON_VERSION=3.14.0
+# Exit immediately if a command fails
+set -e
 
-# Install pyenv if not already installed (Render Linux default)
-if ! command -v pyenv >/dev/null 2>&1; then
+echo "Starting setup..."
+
+# Install pyenv (for managing Python versions)
+if [ ! -d "$HOME/.pyenv" ]; then
     echo "Installing pyenv..."
-    curl https://pyenv.run | bash
-
-    # Setup pyenv environment for this shell
-    export PATH="$HOME/.pyenv/bin:$PATH"
-    eval "$(pyenv init --path)"
-    eval "$(pyenv virtualenv-init -)"
+    git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+    git clone https://github.com/pyenv/pyenv-doctor.git ~/.pyenv/plugins/pyenv-doctor
+    git clone https://github.com/pyenv/pyenv-update.git ~/.pyenv/plugins/pyenv-update
+    git clone https://github.com/pyenv/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
 fi
 
-# Install and set desired Python version
-if ! pyenv versions | grep -q "$PYTHON_VERSION"; then
-    echo "Installing Python $PYTHON_VERSION..."
-    pyenv install $PYTHON_VERSION
+# Load pyenv into the shell
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - bash)"
+eval "$(pyenv virtualenv-init -)"
+
+# Install Python 3.12.13 (most compatible with Render Free Plan)
+if ! pyenv versions | grep -q "3.12.13"; then
+    echo "Installing Python 3.12.13..."
+    pyenv install 3.12.13
 fi
-pyenv global $PYTHON_VERSION
-echo "Using Python version: $(python --version)"
 
-# -------------------------------
-# 2️⃣ Upgrade pip
-# -------------------------------
-pip install --upgrade pip
-echo "Upgraded pip to: $(pip --version)"
+pyenv global 3.12.13
+python --version
+pip --version
 
-# -------------------------------
-# 3️⃣ Install project dependencies
-# -------------------------------
-pip install \
-fastapi==0.104.1 \
-uvicorn==0.24.0 \
-python-multipart==0.0.6 \
-PyPDF2==3.0.1 \
-pypdf==3.17.1 \
-python-docx==1.1.0 \
-requests==2.31.0 \
-pydantic==2.5.3 \
-python-dotenv==1.0.0
+# Upgrade pip to latest
+python -m pip install --upgrade pip
 
-echo "Dependencies installed successfully!"
+# Install all required Python packages (safe versions)
+pip install --no-cache-dir \
+    fastapi==0.104.1 \
+    uvicorn==0.24.0 \
+    python-multipart==0.0.6 \
+    PyPDF2==3.0.1 \
+    pypdf==3.17.1 \
+    python-docx==1.1.0 \
+    requests==2.31.0 \
+    pydantic==2.5.3 \
+    python-dotenv==1.0.0
+
+echo "Setup complete! ✅ Python and dependencies are installed."
