@@ -1,4 +1,10 @@
-const API_BASE_URL = 'http://localhost:8000';
+// Main.js
+
+// Use localhost in development, Render URL in production
+const API_BASE_URL = window.location.hostname.includes("localhost")
+    ? "http://localhost:8000"
+    : "https://ai-resume-job-matcher-backend.onrender.com";
+
 
 let currentResumeText = '';
 
