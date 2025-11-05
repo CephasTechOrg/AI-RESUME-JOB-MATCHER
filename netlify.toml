@@ -1,8 +1,8 @@
 [build]
-  base = ""
   command = "bash ./backend/.netlify/build.sh"
   publish = "backend"
 
 [build.environment]
+  PYTHON_VERSION = "3.12"
   MISE_PYTHON_COMPILE = "false"
   PIP_ROOT_USER_ACTION = "ignore"
