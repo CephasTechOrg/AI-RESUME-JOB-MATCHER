@@ -1,11 +1,21 @@
 [build]
-  # Build command for the backend (sets up your API)
+  # Build backend and deploy frontend
   command = "bash ./backend/.netlify/build.sh"
-  
-  # Publish your static frontend files from the project root
   publish = "."
 
 [build.environment]
   PYTHON_VERSION = "3.12"
   MISE_PYTHON_COMPILE = "false"
   PIP_ROOT_USER_ACTION = "ignore"
+
+# 👇 Add this to route frontend API calls to backend
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
+# 👇 (Optional) Keep SPA routing working
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
