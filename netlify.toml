@@ -1,6 +1,9 @@
 [build]
+  # Build command for the backend (sets up your API)
   command = "bash ./backend/.netlify/build.sh"
-  publish = "backend"
+  
+  # Publish your static frontend files from the project root
+  publish = "."
 
 [build.environment]
   PYTHON_VERSION = "3.12"
