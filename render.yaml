@@ -11,12 +11,14 @@ services:
       pip install --upgrade pip
       pip install -r requirements.txt
 
-    startCommand: uvicorn main:app --host=0.0.0.0 --port=$PORT
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
 
     envVars:
       - key: PYTHON_VERSION
-        value: 3.12
+        value: 3.12.3   # ✅ must include major.minor.patch
       - key: PIP_ROOT_USER_ACTION
         value: ignore
       - key: UVICORN_WORKERS
         value: 4
+      - key: MISE_PYTHON_COMPILE
+        value: "false"   # ✅ helps avoid Rust build issues
