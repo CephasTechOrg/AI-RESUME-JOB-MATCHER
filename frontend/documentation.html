@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation | AI Resume &amp; Job Match Evaluator</title>
+    <meta name="description"
+        content="Step-by-step guide for running AI resume evaluations, reviewing match scores, and exporting insights.">
+    <meta name="author" content="CephasTechOrg">
+    <meta name="theme-color" content="#2563eb">
+    <meta property="og:title" content="Documentation | AI Resume &amp; Job Match Evaluator">
+    <meta property="og:description"
+        content="Learn how to collect job input, upload resumes, interpret visual graphs, and iterate quickly.">
+    <meta property="og:image" content="https://i.imgur.com/IpOBQmm.png">
+    <link rel="icon" type="image/png" href="https://i.imgur.com/IpOBQmm.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        referrerpolicy="no-referrer">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header page-header">
+            <div class="header-content">
+                <div class="header-bar">
+                    <a href="../index.html" class="logo" aria-label="Back to AI Resume Evaluator home">
+                        <img src="https://i.imgur.com/IpOBQmm.png" alt="AI Resume Evaluator logo" class="logo-img">
+                        <div class="logo-copy">
+                            <span class="logo-text">AI Resume Evaluator</span>
+                            <span class="logo-tagline">Job Match Intelligence</span>
+                        </div>
+                    </a>
+                    <button class="nav-toggle" type="button" id="navToggle" aria-expanded="false"
+                        aria-controls="siteNav">
+                        <span class="sr-only">Toggle navigation</span>
+                        <i class="fas fa-bars" aria-hidden="true"></i>
+                    </button>
+                    <nav class="site-nav" id="siteNav" aria-label="Primary navigation">
+                        <a href="../index.html" class="nav-link">Home</a>
+                        <a href="features.html" class="nav-link">Features</a>
+                        <a href="documentation.html" class="nav-link active">Documentation</a>
+                    </nav>
+                </div>
+                <div class="hero-content">
+                    <p class="hero-eyebrow">User guide</p>
+                    <h1>Documentation</h1>
+                    <p class="tagline">Complete guide to using the AI Resume &amp; Job Match Evaluator.</p>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <!-- Quick Start Guide -->
+            <section class="card">
+                <div class="section-header">
+                    <h2><i class="fas fa-rocket"></i> Quick Start Guide</h2>
+                    <p>Get started with the AI Resume Evaluator in just a few simple steps</p>
+                </div>
+
+                <div class="steps-container">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Enter Job Information</h3>
+                            <p>Provide the job title and paste the complete job description. You can also select from
+                                pre-defined job templates to get started quickly.</p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Upload Your Resume</h3>
+                            <p>Upload your resume in PDF or DOCX format. The system will automatically extract and
+                                analyze the text content.</p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Run Evaluation</h3>
+                            <p>Click the "Evaluate Match" button to start the AI analysis. The process typically takes a
+                                few seconds.</p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Review Results</h3>
+                            <p>Analyze your match score, view detailed breakdowns, identify missing keywords, and get
+                                improvement suggestions.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Detailed Documentation -->
+            <section class="card">
+                <div class="section-header">
+                    <h2><i class="fas fa-book"></i> Detailed Documentation</h2>
+                    <p>Comprehensive guide to all features and capabilities</p>
+                </div>
+
+                <div class="docs-content">
+                    <div class="doc-section">
+                        <h3>Job Templates</h3>
+                        <p>The system includes pre-defined templates for various job roles to help you get started
+                            quickly. These templates provide standardized job descriptions for common positions.</p>
+                        <ul>
+                            <li><strong>Software Roles:</strong> Software Engineer, Frontend/Backend Developer, DevOps,
+                                etc.</li>
+                            <li><strong>Data Roles:</strong> Data Scientist, Data Analyst, AI/ML Engineer</li>
+                            <li><strong>Business Roles:</strong> Product Manager, Project Manager, Business Analyst</li>
+                            <li><strong>And many more...</strong> Over 25 different job templates available</li>
+                        </ul>
+                    </div>
+
+                    <div class="doc-section">
+                        <h3>Score Interpretation</h3>
+                        <p>Understanding your evaluation results:</p>
+                        <div class="score-guide">
+                            <div class="score-range excellent">
+                                <span class="range">80-100%</span>
+                                <span class="label">Excellent Match</span>
+                                <span class="description">Strong alignment with job requirements</span>
+                            </div>
+                            <div class="score-range good">
+                                <span class="range">60-79%</span>
+                                <span class="label">Good Match</span>
+                                <span class="description">Good alignment with room for improvement</span>
+                            </div>
+                            <div class="score-range average">
+                                <span class="range">40-59%</span>
+                                <span class="label">Average Match</span>
+                                <span class="description">Moderate alignment, significant improvements needed</span>
+                            </div>
+                            <div class="score-range poor">
+                                <span class="range">0-39%</span>
+                                <span class="label">Poor Match</span>
+                                <span class="description">Major improvements required</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="doc-section">
+                        <h3>Understanding Analysis Categories</h3>
+                        <p>The AI evaluates your resume across multiple dimensions:</p>
+                        <ul>
+                            <li><strong>Skills Match:</strong> Technical and soft skills alignment</li>
+                            <li><strong>Experience Level:</strong> Years and relevance of experience</li>
+                            <li><strong>Education:</strong> Academic qualifications and certifications</li>
+                            <li><strong>Keywords:</strong> Presence of important terminology</li>
+                            <li><strong>Overall Impact:</strong> Comprehensive match score</li>
+                        </ul>
+                    </div>
+
+                    <div class="doc-section">
+                        <h3>File Requirements</h3>
+                        <p>Supported file formats and limitations:</p>
+                        <ul>
+                            <li><strong>Formats:</strong> PDF (.pdf), Word Document (.docx)</li>
+                            <li><strong>Maximum File Size:</strong> 5MB</li>
+                            <li><strong>Text Extraction:</strong> The system extracts and analyzes text content only
+                            </li>
+                            <li><strong>Images & Formatting:</strong> Visual elements are not analyzed</li>
+                        </ul>
+                    </div>
+
+                    <div class="doc-section">
+                        <h3>API Integration</h3>
+                        <p>For developers interested in integrating with our system:</p>
+                        <div class="code-block">
+                            <pre><code>// Base API URL
+const API_BASE_URL = 'https://ai-resume-job-matcher-backend.onrender.com';
+
+// Endpoints:
+// POST /evaluate/upload - Upload resume file
+// POST /evaluate/ - Run evaluation
+// GET /evaluate/job-templates - List templates
+// GET /evaluate/job-templates/{name} - Get template</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="card">
+                <div class="section-header">
+                    <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+                    <p>Common questions and answers</p>
+                </div>
+
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <h4>How accurate is the AI evaluation?</h4>
+                        <p>The AI provides highly accurate analysis based on advanced natural language processing and
+                            machine learning algorithms. However, it should be used as a guidance tool alongside human
+                            judgment.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h4>Is my data secure?</h4>
+                        <p>Yes, we take data privacy seriously. Your resumes and job descriptions are processed securely
+                            and are not stored longer than necessary for the evaluation process.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h4>Can I use this for multiple job applications?</h4>
+                        <p>Absolutely! You can evaluate your resume against as many job descriptions as you need. Use
+                            the "Evaluate Another Resume" button to start a new evaluation.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h4>What if I get a low score?</h4>
+                        <p>Low scores indicate areas for improvement. Focus on the missing keywords and suggestions
+                            provided to enhance your resume for specific job roles.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h4>Do you support other file formats?</h4>
+                        <p>Currently, we support PDF and DOCX formats. These cover the majority of resume formats used
+                            by applicants.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p>Developed by CephasTechOrg</p>
+                    <p>AI-powered resume evaluation and job matching system</p>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/CephasTechOrg" class="social-link" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 CephasTechOrg. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="static/js/navigation.js"></script>
+</body>
+
+</html>

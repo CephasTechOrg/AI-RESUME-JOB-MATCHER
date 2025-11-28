@@ -1,7 +1,10 @@
 // Main.js
 
-// Use localhost in development, Render URL in production
-const API_BASE_URL = window.location.hostname.includes("localhost")
+// Use localhost (including loopback hosts) in development, Render URL in production
+const LOCAL_HOSTNAMES = ["localhost", "127.0.0.1", "::1"];
+const isLocalHostname = LOCAL_HOSTNAMES.includes(window.location.hostname);
+
+const API_BASE_URL = isLocalHostname
     ? "http://localhost:8000"
     : "https://ai-resume-job-matcher-backend.onrender.com";
 

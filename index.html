@@ -4,22 +4,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Resume & Job Match Evaluator</title>
+    <title>AI Resume &amp; Job Match Evaluator</title>
+    <meta name="description"
+        content="AI-powered resume evaluation that benchmarks your CV against targeted job descriptions with instant insights.">
+    <meta name="keywords" content="AI resume review, job match score, ATS optimization, resume analyzer, CephasTechOrg">
+    <meta name="author" content="CephasTechOrg">
+    <meta name="theme-color" content="#2563eb">
+    <meta property="og:title" content="AI Resume &amp; Job Match Evaluator">
+    <meta property="og:description"
+        content="Upload your resume, compare it to any job description, and receive AI-grade insights in seconds.">
+    <meta property="og:image" content="https://i.imgur.com/IpOBQmm.png">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/png" href="https://i.imgur.com/IpOBQmm.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="frontend/static/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        referrerpolicy="no-referrer">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
     <div class="container">
-        <header class="header">
+        <!-- Updated Header with Navigation -->
+        <header class="header page-header">
             <div class="header-content">
-                <div class="logo">
-                    <i class="fas fa-robot"></i>
+                <div class="header-bar">
+                    <a href="index.html" class="logo" aria-label="AI Resume Evaluator home">
+                        <img src="https://i.imgur.com/IpOBQmm.png" alt="AI Resume Evaluator logo" class="logo-img">
+                        <div class="logo-copy">
+                            <span class="logo-text">AI Resume Evaluator</span>
+                            <span class="logo-tagline">Job Match Intelligence</span>
+                        </div>
+                    </a>
+                    <button class="nav-toggle" type="button" id="navToggle" aria-expanded="false"
+                        aria-controls="siteNav">
+                        <span class="sr-only">Toggle navigation</span>
+                        <i class="fas fa-bars" aria-hidden="true"></i>
+                    </button>
+                    <nav class="site-nav" id="siteNav" aria-label="Primary navigation">
+                        <a href="index.html" class="nav-link active">Home</a>
+                        <a href="frontend/features.html" class="nav-link">Features</a>
+                        <a href="frontend/documentation.html" class="nav-link">Documentation</a>
+                    </nav>
                 </div>
-                <h1>AI Resume & Job Match Evaluator</h1>
-                <p class="tagline">Upload your resume and job description to get AI-powered matching analysis and
-                    improvement suggestions</p>
+                <div class="hero-content">
+                    <p class="hero-eyebrow">AI-powered resume insights</p>
+                    <h1>AI Resume &amp; Job Match Evaluator</h1>
+                    <p class="tagline">Upload your resume and job description to get AI-powered matching analysis and
+                        improvement suggestions.</p>
+                </div>
             </div>
         </header>
 
@@ -64,8 +99,38 @@
                             <option value="system_administrator">System Administrator</option>
                             <option value="database_administrator">Database Administrator</option>
                             <option value="technical_support">Technical Support Specialist</option>
+                            <option value="college_applicant">College Applicant</option>
+                            <option value="stem_college_applicant">STEM College Applicant</option>
+                            <option value="business_college_applicant">Business College Applicant</option>
+                            <option value="premed_college_applicant">Pre-Med College Applicant</option>
+                            <option value="international_college_applicant">International College Applicant</option>
+                            <option value="graduate_school_applicant">Graduate School Applicant</option>
+                            <option value="mba_applicant">MBA Applicant</option>
+                            <option value="scholarship_applicant">Scholarship Applicant</option>
+                            <option value="internship_applicant">General Internship Applicant</option>
+                            <option value="research_intern">Research Intern</option>
+                            <option value="entry_level_software_engineer">Entry-Level Software Engineer</option>
+                            <option value="entry_level_data_analyst">Entry-Level Data Analyst</option>
+                            <option value="mechanical_engineer">Mechanical Engineer</option>
+                            <option value="electrical_engineer">Electrical Engineer</option>
+                            <option value="civil_engineer">Civil Engineer</option>
+                            <option value="operations_manager">Operations Manager</option>
+                            <option value="supply_chain_analyst">Supply Chain Analyst</option>
+                            <option value="healthcare_administrator">Healthcare Administrator</option>
+                            <option value="registered_nurse">Registered Nurse</option>
+                            <option value="teacher_k12">K-12 Teacher</option>
+                            <option value="university_lecturer">University Lecturer</option>
+                            <option value="nonprofit_program_manager">Nonprofit Program Manager</option>
+                            <option value="startup_founder">Startup Founder / Entrepreneur</option>
+                            <option value="product_design_intern">Product Design Intern</option>
+                            <option value="uiux_design_intern">UX/UI Design Intern</option>
+                            <option value="software_engineer_intern">Software Engineer Intern</option>
                         </select>
                     </div>
+
+
+
+
 
                     <div class="form-group">
                         <label for="job-title"><i class="fas fa-tag"></i> Job Title:</label>
@@ -118,11 +183,13 @@
                     </div>
                 </div>
 
-                <!-- Charts -->
+                <!-- Charts - Updated for mobile responsiveness -->
                 <div class="charts-container">
                     <div class="chart-card">
                         <h4><i class="fas fa-chart-pie"></i> Detailed Scores Breakdown</h4>
-                        <canvas id="scoresChart"></canvas>
+                        <div class="chart-wrapper">
+                            <canvas id="scoresChart"></canvas>
+                        </div>
                     </div>
                 </div>
 
@@ -209,6 +276,7 @@
     <script src="frontend/static/js/jobs.js"></script>
     <script src="frontend/static/js/visualization.js"></script>
     <script src="frontend/static/js/main.js"></script>
+    <script src="frontend/static/js/navigation.js"></script>
 </body>
 
 </html>

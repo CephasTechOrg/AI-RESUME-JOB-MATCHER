@@ -1,4 +1,4 @@
-JOB_TEMPLATES = {
+JOB_TEMPLATES = { 
     "software_engineer": {
         "title": "Software Engineer",
         "description": """We are looking for a skilled Software Engineer to develop and maintain software applications. 
@@ -536,5 +536,537 @@ Requirements:
 - Customer service orientation
 - Relevant technical certifications preferred
 - Associate or Bachelor's degree in IT field"""
+    },
+    "college_applicant": {
+        "title": "College Applicant",
+        "description": """We are evaluating a College Applicant resume for competitive undergraduate admissions.
+
+Responsibilities:
+- Demonstrate strong academic performance across core subjects
+- Showcase meaningful extracurricular activities and leadership roles
+- Highlight community service, projects, and personal initiatives
+- Communicate clear academic and career goals in the resume
+- Present awards, honors, and standardized test results (if available)
+- Organize experiences in a clear, concise, and professional format
+
+Requirements:
+- High school diploma (completed or in progress)
+- Solid grades in rigorous coursework (honors, AP/IB, A-levels, etc.)
+- Evidence of sustained extracurricular involvement or leadership
+- Community engagement, service, or impact activities
+- Well-structured resume tailored to target colleges or programs
+- Strong written communication and attention to detail"""
+    },
+    "stem_college_applicant": {
+        "title": "STEM College Applicant",
+        "description": """We are evaluating a STEM College Applicant resume for admission into science, technology, engineering, or mathematics programs.
+
+Responsibilities:
+- Demonstrate strong performance in mathematics and science courses
+- Highlight STEM-related projects, competitions, and research
+- Showcase coding, robotics, engineering, or lab experience
+- Present leadership in STEM clubs, fairs, or Olympiads
+- Communicate a clear interest in solving technical or scientific problems
+- Organize experiences to emphasize analytical and problem-solving skills
+
+Requirements:
+- High school diploma (completed or in progress)
+- Strong grades in math, physics, chemistry, and related subjects
+- Evidence of STEM extracurriculars (clubs, competitions, hackathons)
+- Projects or portfolios demonstrating technical skills
+- Letters, awards, or recognitions in STEM fields (if available)
+- Well-formatted resume aligned with target STEM programs"""
+    },
+    "business_college_applicant": {
+        "title": "Business College Applicant",
+        "description": """We are evaluating a Business College Applicant resume for admission into business, finance, or management programs.
+
+Responsibilities:
+- Demonstrate interest in business, entrepreneurship, or economics
+- Highlight leadership roles in clubs, student government, or organizations
+- Showcase experience in sales, marketing, finance, or school enterprises
+- Present community or school projects with measurable impact
+- Communicate clear goals related to business or entrepreneurship
+- Structure experiences to show initiative, ownership, and responsibility
+
+Requirements:
+- High school diploma (completed or in progress)
+- Solid grades in math, economics, and related subjects
+- Evidence of leadership or participation in business-related activities
+- Experience with clubs, ventures, or fundraising initiatives
+- Strong interpersonal and communication skills
+- Resume tailored to competitive business or management programs"""
+    },
+    "premed_college_applicant": {
+        "title": "Pre-Med College Applicant",
+        "description": """We are evaluating a Pre-Med College Applicant resume for pre-medical or health-related programs.
+
+Responsibilities:
+- Demonstrate strong academic performance in biology, chemistry, and related sciences
+- Highlight volunteering or shadowing in hospitals, clinics, or health settings
+- Showcase community service focused on health, wellness, or advocacy
+- Present research, science fairs, or health-related projects
+- Communicate a clear motivation for pursuing medicine or healthcare
+- Organize experiences to reflect empathy, responsibility, and resilience
+
+Requirements:
+- High school diploma (completed or in progress)
+- Strong grades in science and math coursework
+- Exposure to clinical, community health, or caregiving environments
+- Evidence of long-term commitment to service or volunteering
+- Strong interpersonal, communication, and teamwork skills
+- Resume aligned with pre-med or health sciences expectations"""
+    },
+    "international_college_applicant": {
+        "title": "International College Applicant",
+        "description": """We are evaluating an International College Applicant resume for admission to global universities.
+
+Responsibilities:
+- Demonstrate strong academic performance within the local school system
+- Highlight international exams, competitions, or standardized tests
+- Showcase language skills, cultural activities, and global experiences
+- Present leadership, community service, or cross-cultural initiatives
+- Communicate clear academic and career goals in an international context
+- Organize activities to reflect adaptability, resilience, and initiative
+
+Requirements:
+- Completion or near completion of secondary education
+- Competitive grades and exam scores relative to the local curriculum
+- Evidence of extracurricular engagement or leadership roles
+- English proficiency or other language certifications (if applicable)
+- Clear documentation of awards, rankings, or distinctions
+- Professional resume format that translates well across countries"""
+    },
+    "graduate_school_applicant": {
+        "title": "Graduate School Applicant",
+        "description": """We are evaluating a Graduate School Applicant CV or resume for admission into master's or PhD programs.
+
+Responsibilities:
+- Present advanced coursework and strong academic performance
+- Highlight research projects, theses, or dissertations
+- Showcase publications, presentations, or conference participation
+- Emphasize teaching, mentoring, or assistantship experience (if any)
+- Communicate focused research interests and long-term goals
+- Organize information to reflect depth, rigor, and academic maturity
+
+Requirements:
+- Bachelor's degree (completed or near completion)
+- Strong GPA in major and relevant coursework
+- Research or project experience aligned with target program
+- Evidence of academic productivity (papers, posters, talks where applicable)
+- Strong analytical, writing, and critical thinking skills
+- CV or resume tailored to graduate-level expectations"""
+    },
+    "mba_applicant": {
+        "title": "MBA Applicant",
+        "description": """We are evaluating an MBA Applicant resume for competitive business school admissions.
+
+Responsibilities:
+- Demonstrate professional experience with increasing responsibility
+- Highlight leadership, team management, or project ownership
+- Show impact through measurable results (revenue, growth, savings)
+- Present community, volunteer, or extracurricular leadership
+- Communicate clear career goals and reasons for pursuing an MBA
+- Structure resume to emphasize strategic thinking and business impact
+
+Requirements:
+- Bachelor's degree in any discipline
+- Several years of professional experience (varies by program)
+- Evidence of leadership or high-impact contributions at work
+- Quantifiable achievements in business or organizational roles
+- Strong communication, analytical, and interpersonal skills
+- Resume aligned with MBA program expectations and industry goals"""
+    },
+    "scholarship_applicant": {
+        "title": "Scholarship Applicant",
+        "description": """We are evaluating a Scholarship Applicant resume for merit- or need-based funding opportunities.
+
+Responsibilities:
+- Demonstrate academic excellence or significant improvement over time
+- Highlight leadership, community service, or social impact
+- Showcase awards, honors, or recognitions
+- Present relevant projects, initiatives, or advocacy work
+- Communicate a compelling personal story and future goals
+- Organize achievements to align with scholarship criteria
+
+Requirements:
+- Enrollment or acceptance into an academic program (where applicable)
+- Strong academic record or clear evidence of potential
+- Community engagement, volunteering, or leadership activities
+- Alignment with the mission or focus of the scholarship
+- Clear documentation of awards and responsibilities
+- Well-structured resume tailored to scholarship requirements"""
+    },
+    "internship_applicant": {
+        "title": "General Internship Applicant",
+        "description": """We are evaluating a General Internship Applicant resume for entry-level professional opportunities.
+
+Responsibilities:
+- Demonstrate relevant coursework, skills, or foundational knowledge
+- Highlight projects, group work, or school-based experiences
+- Showcase part-time work, volunteering, or campus involvement
+- Communicate willingness to learn and contribute to the team
+- Present technical or soft skills relevant to the target internship
+- Organize information clearly for recruiters with limited time
+
+Requirements:
+- High school or undergraduate student status (or recent graduate)
+- Basic knowledge or interest in the target field or industry
+- Evidence of responsibility, reliability, and initiative
+- Strong communication and collaboration skills
+- Ability to learn quickly and adapt in professional settings
+- Resume tailored to the specific internship role or sector"""
+    },
+    "research_intern": {
+        "title": "Research Intern",
+        "description": """We are evaluating a Research Intern resume for academic or industry research roles.
+
+Responsibilities:
+- Demonstrate strong academic performance in relevant subjects
+- Highlight research projects, lab work, or independent studies
+- Showcase skills in data collection, analysis, and documentation
+- Present experience with scientific or technical tools and methods
+- Communicate curiosity, persistence, and attention to detail
+- Organize experiences to reflect analytical and critical thinking skills
+
+Requirements:
+- High-performing student in a relevant field (STEM, social science, etc.)
+- Experience with research methods, experiments, or data analysis
+- Familiarity with tools such as Python, R, lab equipment, or survey tools
+- Ability to work under supervision and follow research protocols
+- Strong written and verbal communication skills
+- Resume tailored to specific research areas or labs"""
+    },
+    "entry_level_software_engineer": {
+        "title": "Entry-Level Software Engineer",
+        "description": """We are evaluating an Entry-Level Software Engineer resume for junior developer roles.
+
+Responsibilities:
+- Demonstrate understanding of core programming concepts and data structures
+- Highlight academic projects, hackathons, or personal coding projects
+- Showcase internships, freelance work, or open-source contributions
+- Present familiarity with version control, testing, and basic deployment
+- Communicate enthusiasm for learning and working in engineering teams
+- Organize technical experience in a clear, skills-focused format
+
+Requirements:
+- Degree in Computer Science or related field (or equivalent experience)
+- Proficiency in at least one major programming language
+- Portfolio of projects demonstrating real-world problem solving
+- Familiarity with software development workflows and tools
+- Strong analytical and debugging skills
+- Resume tailored to junior engineering or graduate programs"""
+    },
+    "entry_level_data_analyst": {
+        "title": "Entry-Level Data Analyst",
+        "description": """We are evaluating an Entry-Level Data Analyst resume for junior analytics roles.
+
+Responsibilities:
+- Demonstrate basic proficiency with data tools (Excel, SQL, Python, R)
+- Highlight coursework, projects, or internships involving data analysis
+- Showcase dashboards, reports, or visualizations created by the candidate
+- Present examples of problem-solving using data-driven insights
+- Communicate findings clearly to non-technical audiences
+- Structure resume to emphasize quantitative and analytical skills
+
+Requirements:
+- Degree in Statistics, Data Science, Economics, or related field
+- Experience with datasets through projects or internships
+- Familiarity with BI or visualization tools (Tableau, Power BI, etc.)
+- Strong attention to detail and numerical accuracy
+- Ability to interpret and communicate patterns in data
+- Resume aligned with entry-level analyst expectations"""
+    },
+    "mechanical_engineer": {
+        "title": "Mechanical Engineer",
+        "description": """Looking for a Mechanical Engineer to design and analyze mechanical systems.
+
+Responsibilities:
+- Design mechanical components, assemblies, and systems
+- Perform simulations, calculations, and tolerance analyses
+- Create and review technical drawings and documentation
+- Collaborate with manufacturing, quality, and cross-functional teams
+- Support prototyping, testing, and validation activities
+- Ensure designs meet safety, reliability, and regulatory standards
+
+Requirements:
+- Bachelor's degree in Mechanical Engineering or related field
+- Experience with CAD tools (SolidWorks, AutoCAD, CATIA, etc.)
+- Knowledge of mechanics, materials, and thermodynamics
+- Strong analytical and problem-solving skills
+- Understanding of manufacturing processes and standards
+- Excellent communication and teamwork abilities"""
+    },
+    "electrical_engineer": {
+        "title": "Electrical Engineer",
+        "description": """Seeking an Electrical Engineer to design and support electrical systems and products.
+
+Responsibilities:
+- Design, test, and implement electrical circuits and systems
+- Develop schematics, layouts, and technical documentation
+- Conduct simulations and analyze system performance
+- Collaborate with hardware, firmware, and manufacturing teams
+- Troubleshoot electrical issues and propose solutions
+- Ensure compliance with safety and regulatory standards
+
+Requirements:
+- Bachelor's degree in Electrical Engineering or related field
+- Experience with circuit design and analysis tools
+- Knowledge of analog and digital electronics
+- Familiarity with embedded systems and power electronics (a plus)
+- Strong analytical, troubleshooting, and documentation skills
+- Ability to work in multidisciplinary teams"""
+    },
+    "civil_engineer": {
+        "title": "Civil Engineer",
+        "description": """Looking for a Civil Engineer to design and manage infrastructure projects.
+
+Responsibilities:
+- Plan and design civil engineering projects (roads, bridges, buildings, etc.)
+- Prepare drawings, specifications, and cost estimates
+- Conduct site visits, surveys, and inspections
+- Coordinate with architects, contractors, and stakeholders
+- Ensure compliance with building codes and regulations
+- Monitor project progress and address engineering challenges
+
+Requirements:
+- Bachelor's degree in Civil Engineering or related field
+- Knowledge of structural analysis and design principles
+- Experience with civil engineering software (AutoCAD, Revit, STAAD, etc.)
+- Understanding of construction methods and materials
+- Strong project management and communication skills
+- Relevant licensure or certifications are a plus"""
+    },
+    "operations_manager": {
+        "title": "Operations Manager",
+        "description": """Seeking an Operations Manager to oversee daily operations and process improvement.
+
+Responsibilities:
+- Manage day-to-day operations across teams or departments
+- Monitor performance metrics and identify areas for improvement
+- Optimize workflows, resources, and operational efficiency
+- Collaborate with leadership on strategic planning and execution
+- Ensure compliance with policies, procedures, and regulations
+- Lead, coach, and develop team members
+
+Requirements:
+- 5+ years of experience in operations or related roles
+- Bachelor's degree in Business, Operations, or related field
+- Strong analytical and problem-solving skills
+- Experience with process improvement methodologies (Lean, Six Sigma)
+- Excellent leadership and communication abilities
+- Proven track record of driving operational results"""
+    },
+    "supply_chain_analyst": {
+        "title": "Supply Chain Analyst",
+        "description": """We are evaluating a Supply Chain Analyst resume for logistics and operations roles.
+
+Responsibilities:
+- Analyze supply chain data to identify bottlenecks and risks
+- Support demand forecasting, inventory planning, and procurement
+- Develop reports and dashboards on supply chain performance
+- Work with vendors, warehouses, and internal teams to optimize flow
+- Recommend process improvements and cost-saving opportunities
+- Document supply chain processes and performance metrics
+
+Requirements:
+- Degree in Supply Chain, Operations, Business, or related field
+- Experience with Excel, SQL, or analytics tools
+- Understanding of logistics, inventory, and procurement concepts
+- Strong analytical and organizational skills
+- Ability to collaborate with cross-functional stakeholders
+- Resume aligned with supply chain or operations roles"""
+    },
+    "healthcare_administrator": {
+        "title": "Healthcare Administrator",
+        "description": """Looking for a Healthcare Administrator to manage operations in a healthcare setting.
+
+Responsibilities:
+- Oversee daily operations of clinics, departments, or facilities
+- Manage staffing, scheduling, and resource allocation
+- Ensure compliance with healthcare regulations and standards
+- Monitor budgets, expenses, and financial performance
+- Implement policies, procedures, and quality improvement initiatives
+- Coordinate communication among medical, administrative, and support staff
+
+Requirements:
+- Bachelor's or master's degree in Healthcare Administration or related field
+- Experience in healthcare operations or management
+- Knowledge of healthcare regulations and accreditation standards
+- Strong organizational, leadership, and communication skills
+- Ability to manage multiple priorities in a fast-paced environment
+- Commitment to patient-centered and ethical care"""
+    },
+    "registered_nurse": {
+        "title": "Registered Nurse",
+        "description": """Seeking a Registered Nurse to provide compassionate, high-quality patient care.
+
+Responsibilities:
+- Assess, plan, implement, and evaluate patient care
+- Administer medications and treatments as prescribed
+- Monitor patient conditions and document observations
+- Educate patients and families on health management
+- Collaborate with physicians and interdisciplinary teams
+- Maintain a safe and compliant clinical environment
+
+Requirements:
+- Valid nursing license (RN) and relevant credentials
+- Nursing degree or diploma from an accredited program
+- Clinical experience in relevant specialty or setting
+- Strong clinical judgment and critical thinking skills
+- Excellent communication and empathy
+- Commitment to patient safety and evidence-based care"""
+    },
+    "teacher_k12": {
+        "title": "K-12 Teacher",
+        "description": """Looking for a K-12 Teacher to deliver engaging lessons and support student growth.
+
+Responsibilities:
+- Plan and deliver lessons aligned with curriculum standards
+- Assess student learning and adjust instruction as needed
+- Create a positive, inclusive, and safe classroom environment
+- Communicate regularly with parents and guardians
+- Participate in school activities, meetings, and professional development
+- Support students' academic, social, and emotional growth
+
+Requirements:
+- Bachelor's degree in Education or subject-specific field
+- Teaching certification or licensure (as required)
+- Classroom teaching experience or student teaching
+- Strong classroom management and instructional skills
+- Ability to differentiate instruction for diverse learners
+- Passion for education and student success"""
+    },
+    "university_lecturer": {
+        "title": "University Lecturer",
+        "description": """We are evaluating a University Lecturer resume for higher education teaching roles.
+
+Responsibilities:
+- Develop and deliver university-level lectures and seminars
+- Design syllabi, assignments, and assessments
+- Advise and mentor students on academic and career paths
+- Participate in departmental service and academic committees
+- Engage in research, publications, or professional practice (where applicable)
+- Maintain up-to-date knowledge in the discipline
+
+Requirements:
+- Master's or PhD in the relevant field
+- Experience teaching at the university or college level
+- Strong communication and presentation skills
+- Evidence of research, practice, or scholarly activity
+- Ability to design fair and effective assessments
+- Commitment to inclusive and student-centered teaching"""
+    },
+    "nonprofit_program_manager": {
+        "title": "Nonprofit Program Manager",
+        "description": """Seeking a Nonprofit Program Manager to lead social impact initiatives.
+
+Responsibilities:
+- Design, implement, and evaluate nonprofit programs and services
+- Manage budgets, timelines, and program resources
+- Coordinate staff, volunteers, and community partners
+- Collect data and report on program outcomes and impact
+- Support fundraising, grant writing, and stakeholder engagement
+- Ensure alignment with organizational mission and values
+
+Requirements:
+- Experience in nonprofit or community-based organizations
+- Strong project management and organizational skills
+- Ability to work with diverse communities and stakeholders
+- Excellent written and verbal communication skills
+- Passion for social impact, advocacy, or community development
+- Degree in Social Work, Public Policy, Nonprofit Management, or related field (preferred)"""
+    },
+    "startup_founder": {
+        "title": "Startup Founder / Entrepreneur",
+        "description": """We are evaluating a Startup Founder / Entrepreneur resume for early-stage venture leadership roles.
+
+Responsibilities:
+- Identify market problems and develop innovative solutions
+- Build and lead small, high-performing teams
+- Develop business models, go-to-market strategies, and product roadmaps
+- Pitch to customers, partners, and investors
+- Manage operations, finances, and growth priorities
+- Adapt quickly to feedback, failures, and changing conditions
+
+Requirements:
+- Demonstrated experience starting or co-founding a venture or project
+- Evidence of traction (users, revenue, pilots, partnerships, etc.)
+- Strong ownership, resilience, and problem-solving skills
+- Ability to wear multiple hats in dynamic environments
+- Clear vision and communication of the venture’s value proposition
+- Resume focused on impact, execution, and learning"""
+    },
+    "product_design_intern": {
+        "title": "Product Design Intern",
+        "description": """We are evaluating a Product Design Intern resume for design-focused internship roles.
+
+Responsibilities:
+- Support the creation of wireframes, mockups, and prototypes
+- Assist in user research, interviews, and usability tests
+- Collaborate with designers, product managers, and engineers
+- Contribute to design systems and visual guidelines
+- Iterate on designs based on feedback and user insights
+- Document design decisions and rationale
+
+Requirements:
+- Student or recent graduate in Design, HCI, or related field
+- Portfolio showcasing design projects and process
+- Familiarity with design tools (Figma, Sketch, Adobe XD, etc.)
+- Understanding of UX principles and interaction design
+- Openness to feedback and eagerness to learn
+- Resume aligned with design internship expectations"""
+    },
+    "software_engineer_intern": {
+"title": "Software Engineer Intern",
+"description": """Seeking a Software Engineer Intern studying Computer Science or any computing related course.
+
+Responsibilities:
+
+Write clean code for assigned features
+
+Test features and fix issues
+
+Work with senior engineers on tasks
+
+Use Git for version control
+
+Join team meetings and follow project tasks
+
+Learn new tools and contribute to the team
+
+Requirements:
+
+Enrolled in a Computer Science or computing related program
+
+Strong foundation in programming
+
+Experience with HTML, CSS, JavaScript, Python, or Java
+
+Basic understanding of databases
+
+Ability to solve problems and work with a team
+
+Strong interest in software development"""
+},
+    "uiux_design_intern": {
+        "title": "UX/UI Design Intern",
+        "description": """We are evaluating a UX/UI Design Intern resume for user experience and interface design roles.
+
+Responsibilities:
+- Assist in designing user flows, interfaces, and interactive components
+- Support user research, persona development, and journey mapping
+- Create prototypes and test designs with users or stakeholders
+- Collaborate with cross-functional teams to refine designs
+- Help maintain and extend design systems and component libraries
+- Document findings and contribute to UX case studies
+
+Requirements:
+- Academic background or training in UX/UI, HCI, or related fields
+- Portfolio demonstrating UX process and visual design skills
+- Familiarity with design and prototyping tools
+- Understanding of accessibility and responsive design principles
+- Strong communication and storytelling abilities
+- Resume tailored to UX/UI internship opportunities"""
     }
 }

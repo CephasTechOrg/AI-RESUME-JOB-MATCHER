@@ -1,2 +1,4 @@
 2025-11-02 21:51:33,556 - utils.logger - ERROR - AI API error: HTTPSConnectionPool(host='api.deepseek.com', port=443): Read timed out. (read timeout=30)
 2025-11-02 22:49:32,325 - utils.logger - ERROR - AI API error: Response ended prematurely
+2025-11-17 12:32:06,527 - utils.logger - ERROR - AI API error: HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/completions (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001E4C90C4690>: Failed to resolve 'api.deepseek.com' ([Errno 11001] getaddrinfo failed)"))
+2025-11-17 12:32:56,818 - utils.logger - ERROR - AI API error: HTTPSConnectionPool(host='api.deepseek.com', port=443): Max retries exceeded with url: /v1/chat/completions (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001E4C90A4F10>: Failed to resolve 'api.deepseek.com' ([Errno 11001] getaddrinfo failed)"))

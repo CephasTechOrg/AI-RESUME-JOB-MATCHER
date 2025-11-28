@@ -1,6 +1,6 @@
 let scoresChart = null;
 
-// Create scores chart
+// Create scores chart with improved mobile responsiveness
 function createScoresChart(scores) {
     const ctx = document.getElementById('scoresChart').getContext('2d');
 
@@ -20,6 +20,9 @@ function createScoresChart(scores) {
         return '#ef4444'; // Red
     });
 
+    // Determine device type for responsive settings
+    const isMobile = window.innerWidth <= 768;
+
     scoresChart = new Chart(ctx, {
         type: 'bar',
         data: {
@@ -36,8 +39,8 @@ function createScoresChart(scores) {
         },
         options: {
             responsive: true,
-            maintainAspectRatio: true,
-            aspectRatio: 2,
+            maintainAspectRatio: false, // Changed to false for better mobile control
+            aspectRatio: isMobile ? 1.5 : 2, // Adjust aspect ratio based on device
             scales: {
                 y: {
                     beginAtZero: true,
@@ -47,18 +50,31 @@ function createScoresChart(scores) {
                             return value + '%';
                         },
                         font: {
-                            family: "'Inter', 'Segoe UI', sans-serif"
+                            family: "'Inter', 'Segoe UI', sans-serif",
+                            size: isMobile ? 10 : 12
                         }
                     },
                     grid: {
                         color: 'rgba(0, 0, 0, 0.05)'
+                    },
+                    title: {
+                        display: true,
+                        text: 'Match Score (%)',
+                        font: {
+                            family: "'Inter', 'Segoe UI', sans-serif",
+                            size: isMobile ? 12 : 14,
+                            weight: 'bold'
+                        }
                     }
                 },
                 x: {
                     ticks: {
                         font: {
-                            family: "'Inter', 'Segoe UI', sans-serif"
-                        }
+                            family: "'Inter', 'Segoe UI', sans-serif",
+                            size: isMobile ? 10 : 12
+                        },
+                        maxRotation: isMobile ? 45 : 0,
+                        minRotation: isMobile ? 45 : 0
                     },
                     grid: {
                         display: false
@@ -91,3 +107,10 @@ function createScoresChart(scores) {
         }
     });
 }
+
+// Handle window resize for chart responsiveness
+window.addEventListener('resize', function () {
+    if (scoresChart) {
+        scoresChart.resize();
+    }
+});
