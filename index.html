@@ -128,9 +128,33 @@
                         </select>
                     </div>
 
-
-
-
+                    <div class="form-group" id="intern-level-group" style="display: none;">
+                        <label for="intern-level"><i class="fas fa-graduation-cap"></i> Role Level:</label>
+                        <select id="intern-level" onchange="updateInternTemplate()">
+                            <option value="general">General</option>
+                            <option value="freshman">Freshman</option>
+                            <option value="sophomore">Sophomore</option>
+                            <option value="junior">Junior</option>
+                            <option value="senior">Senior</option>
+                        </select>
+                    </div>
+                    <div class="form-group full-width" id="level-insights" style="display:none;">
+                        <label><i class="fas fa-layer-group"></i> Level-specific expectations</label>
+                        <div class="level-panel">
+                            <div>
+                                <h4>Requirements</h4>
+                                <ul id="level-requirements"></ul>
+                            </div>
+                            <div>
+                                <h4>Responsibilities</h4>
+                                <ul id="level-responsibilities"></ul>
+                            </div>
+                            <div>
+                                <h4>Bonus Signals</h4>
+                                <ul id="bonus-signals"></ul>
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="form-group">
                         <label for="job-title"><i class="fas fa-tag"></i> Job Title:</label>
@@ -199,12 +223,28 @@
                     <div class="scores-grid" id="scores-grid"></div>
                 </div>
 
+                <div class="comparison-card">
+                    <div class="comparison-controls">
+                        <label for="target-score"><i class="fas fa-bullseye"></i> Target Score</label>
+                        <input type="range" id="target-score" min="50" max="100" value="85" step="1">
+                        <span id="target-score-value">85</span>
+                    </div>
+                    <p id="comparison-delta"></p>
+                </div>
+
                 <!-- Missing Keywords -->
                 <div class="analysis-card">
                     <h4><i class="fas fa-search"></i> Missing Keywords & Skills</h4>
                     <p class="card-description">These keywords from the job description were not found in your resume
                     </p>
                     <div id="keywords-list" class="keywords-list"></div>
+                </div>
+
+                <!-- Keyword match explanations -->
+                <div class="analysis-card">
+                    <h4><i class="fas fa-info-circle"></i> Why These Matched</h4>
+                    <p class="card-description">Hover to see the phrase or reasoning that triggered a match.</p>
+                    <div id="keyword-matches" class="keywords-list"></div>
                 </div>
 
                 <!-- Suggestions -->
@@ -214,6 +254,17 @@
                     <ul id="suggestions-list" class="suggestions-list"></ul>
                 </div>
 
+                <div class="analysis-card">
+                    <h4><i class="fas fa-shield-check"></i> Quality Gates</h4>
+                    <p class="card-description">Format checks, location/contact requirements, and hallucination guards.</p>
+                    <ul id="quality-gates" class="quality-list"></ul>
+                </div>
+
+                <div id="fallback-banner" class="analysis-card hidden">
+                    <h4><i class="fas fa-triangle-exclamation"></i> Notice</h4>
+                    <p class="card-description"></p>
+                </div>
+
                 <!-- Summary -->
                 <div class="analysis-card">
                     <h4><i class="fas fa-file-alt"></i> AI Summary</h4>
@@ -221,6 +272,18 @@
                     <div class="summary-content">
                         <i class="fas fa-quote-left"></i>
                         <p id="summary-text"></p>
+                    </div>
+                </div>
+
+                <div class="analysis-card">
+                    <h4><i class="fas fa-comments"></i> Ask the AI Coach</h4>
+                    <p class="card-description">Follow up with targeted questions to refine your resume for this role.</p>
+                    <div class="chat-box">
+                        <textarea id="chat-question" rows="3" placeholder="e.g., How can I strengthen my testing story?"></textarea>
+                        <button class="primary-btn" onclick="askAgentQuestion()">
+                            <i class="fas fa-paper-plane"></i> Ask
+                        </button>
+                        <div id="chat-response" class="chat-response"></div>
                     </div>
                 </div>
 

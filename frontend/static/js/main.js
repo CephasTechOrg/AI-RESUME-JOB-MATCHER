@@ -10,6 +10,11 @@ const API_BASE_URL = isLocalHostname
 
 
 let currentResumeText = '';
+let latestOverallScore = 0;
+let lastEvaluationPayload = null;
+let lastEvaluationResult = null;
+let lastJobTitle = '';
+let lastJobDescription = '';
 
 // Handle file upload and text extraction
 document.getElementById('resume-upload').addEventListener('change', async function (e) {
@@ -48,6 +53,8 @@ document.getElementById('resume-upload').addEventListener('change', async functi
 async function evaluateResume() {
     const jobTitle = document.getElementById('job-title').value;
     const jobDescription = document.getElementById('job-description').value;
+    const internLevelSelect = document.getElementById('intern-level');
+    const internLevel = internLevelSelect ? internLevelSelect.value : 'general';
 
     if (!jobTitle || !jobDescription || !currentResumeText) {
         alert('Please fill in all fields and upload a resume');
@@ -62,6 +69,7 @@ async function evaluateResume() {
         formData.append('job_title', jobTitle);
         formData.append('job_description', jobDescription);
         formData.append('resume_text', currentResumeText);
+        formData.append('intern_level', internLevel);
 
         const response = await fetch(`${API_BASE_URL}/evaluate/`, {
             method: 'POST',
@@ -73,6 +81,15 @@ async function evaluateResume() {
         }
 
         const results = await response.json();
+        lastEvaluationPayload = {
+            job_title: jobTitle,
+            job_description: jobDescription,
+            resume_text: currentResumeText,
+            intern_level: internLevel,
+        };
+        lastEvaluationResult = results;
+        lastJobTitle = jobTitle;
+        lastJobDescription = jobDescription;
         displayResults(results);
 
     } catch (error) {
@@ -93,8 +110,10 @@ function displayResults(results) {
     const overallScore = results.scores.overall_impact ||
         Math.round(Object.values(results.scores).reduce((a, b) => a + b, 0) / Object.values(results.scores).length);
 
+    latestOverallScore = overallScore;
     document.getElementById('overall-score').textContent = overallScore;
     updateScoreCircle(overallScore);
+    updateComparison();
 
     // Create charts
     createScoresChart(results.scores);
@@ -105,11 +124,24 @@ function displayResults(results) {
     // Display missing keywords
     displayKeywords(results.missing_keywords);
 
-    // Display suggestions
+    // Display keyword matches and suggestions
+    displayKeywordMatches(results.keyword_matches || []);
     displaySuggestions(results.suggestions);
+
+    // Quality gates
+    displayQualityGates(results.quality_gates);
 
     // Display summary
     document.getElementById('summary-text').textContent = results.summary;
+
+    const fallbackBanner = document.getElementById('fallback-banner');
+    if (fallbackBanner) {
+        const isFallback = results.source === 'fallback';
+        fallbackBanner.textContent = isFallback
+            ? 'AI service unavailable; showing keyword-based fallback.'
+            : '';
+        fallbackBanner.classList.toggle('hidden', !isFallback);
+    }
 }
 
 // Update score circle animation
@@ -167,6 +199,63 @@ function displaySuggestions(suggestions) {
     });
 }
 
+function displayKeywordMatches(matches) {
+    const container = document.getElementById('keyword-matches');
+    if (!container) return;
+    container.innerHTML = '';
+
+    if (!matches.length) {
+        container.textContent = 'No strong matches detected yet.';
+        return;
+    }
+
+    matches.forEach(match => {
+        const span = document.createElement('span');
+        span.className = 'keyword match';
+        const method = match.method === 'semantic' ? 'Semantic similarity' : 'Exact match';
+        const phrase = match.matched_phrase || match.label;
+        span.dataset.tip = `${method}\nPhrase: ${phrase}`;
+        span.textContent = match.label;
+        container.appendChild(span);
+    });
+}
+
+function displayQualityGates(quality) {
+    const list = document.getElementById('quality-gates');
+    if (!list) return;
+    list.innerHTML = '';
+    const warnings = quality?.warnings || [];
+
+    if (!warnings.length) {
+        const li = document.createElement('li');
+        li.textContent = 'No quality warnings detected.';
+        li.style.background = '#ecfeff';
+        li.style.borderColor = '#a5f3fc';
+        li.style.color = '#0f172a';
+        list.appendChild(li);
+        return;
+    }
+
+    warnings.forEach(msg => {
+        const li = document.createElement('li');
+        li.textContent = msg;
+        list.appendChild(li);
+    });
+}
+
+function updateComparison() {
+    const slider = document.getElementById('target-score');
+    const label = document.getElementById('target-score-value');
+    const deltaText = document.getElementById('comparison-delta');
+    if (!slider || !label || !deltaText) return;
+
+    const target = Number(slider.value || 0);
+    label.textContent = target;
+    const delta = latestOverallScore - target;
+    const status = delta >= 0 ? 'ahead' : 'behind';
+    deltaText.textContent = `You are ${Math.abs(delta)} points ${status} of your target.`;
+}
+
 // Show/hide loading spinner
 function showLoading(show) {
     document.getElementById('loading').classList.toggle('hidden', !show);
@@ -183,10 +272,72 @@ function resetEvaluation() {
     document.getElementById('resume-upload').value = '';
     document.getElementById('file-info').textContent = '';
     document.getElementById('file-info').classList.remove('show');
+    const internLevelSelect = document.getElementById('intern-level');
+    if (internLevelSelect) {
+        internLevelSelect.value = 'general';
+    }
     currentResumeText = '';
+    latestOverallScore = 0;
+    lastEvaluationPayload = null;
+    lastEvaluationResult = null;
+    lastJobTitle = '';
+    lastJobDescription = '';
 }
 
 // Initialize app
 document.addEventListener('DOMContentLoaded', function () {
     console.log('AI Resume Evaluator initialized');
+    const slider = document.getElementById('target-score');
+    if (slider) {
+        slider.addEventListener('input', updateComparison);
+    }
+    // Optional: show connectivity status in console
+    fetch(`${API_BASE_URL}/evaluate/status`).then(r => r.json()).then(status => {
+        console.log('Backend status', status);
+    }).catch(() => {});
 });
+
+async function askAgentQuestion() {
+    const questionInput = document.getElementById('chat-question');
+    const responseBox = document.getElementById('chat-response');
+    if (!questionInput || !responseBox) return;
+    const question = questionInput.value.trim();
+    if (!question) {
+        responseBox.textContent = 'Please enter a question.';
+        return;
+    }
+    if (!lastEvaluationPayload || !lastEvaluationResult) {
+        responseBox.textContent = 'Run an evaluation first.';
+        return;
+    }
+
+    responseBox.textContent = 'Thinking...';
+    try {
+        const formData = new FormData();
+        formData.append('question', question);
+        formData.append('job_title', lastJobTitle || lastEvaluationPayload.job_title);
+        formData.append('job_description', lastJobDescription || lastEvaluationPayload.job_description);
+        formData.append('resume_text', lastEvaluationPayload.resume_text);
+        formData.append('evaluation_json', JSON.stringify(lastEvaluationResult));
+
+        const resp = await fetch(`${API_BASE_URL}/evaluate/chat`, {
+            method: 'POST',
+            body: formData,
+        });
+        if (!resp.ok) {
+            let detail = 'Chat failed';
+            try {
+                const err = await resp.json();
+                detail = err.detail || detail;
+            } catch (e) {
+                // ignore parse errors
+            }
+            throw new Error(detail);
+        }
+        const data = await resp.json();
+        responseBox.textContent = data.answer || 'No response received.';
+    } catch (err) {
+        responseBox.textContent = `${err.message || 'Chat failed.'} Please try again.`;
+        console.error(err);
+    }
+}

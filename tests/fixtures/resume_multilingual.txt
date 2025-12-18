@@ -1,0 +1,1 @@
+Ingeniera de software con 3 años de experiencia en desarrollo web full-stack. Implementé pruebas unitarias y de integración con Jest y Playwright. Colaboré en revisiones de código y despliegues en la nube. Trabajé con equipos remotos, mejorando rendimiento de APIs en un 25%. Hablo inglés y español con clientes internacionales.

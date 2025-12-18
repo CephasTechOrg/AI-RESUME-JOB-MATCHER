@@ -1,0 +1,1 @@
+Principal engineer with 10+ years leading distributed systems and mentoring teams. Deployed microservices to Kubernetes on AWS, improved latency by 45% for 20M users, and owned on-call for production. Drove system design, observability, and cost optimizations. Wrote integration and load tests; led code reviews and incident postmortems.

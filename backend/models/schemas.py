@@ -1,6 +1,6 @@
 
 from pydantic import BaseModel
-from typing import List, Dict, Optional
+from typing import List, Dict, Optional, Any
 
 class EvaluationRequest(BaseModel):
     job_title: str
@@ -12,8 +12,16 @@ class EvaluationResponse(BaseModel):
     missing_keywords: List[str]
     suggestions: List[str]
     summary: str
+    keyword_matches: Optional[List[Dict[str, Any]]] = None
+    quality_gates: Optional[Dict[str, Any]] = None
+    cache_status: Optional[str] = None
 
 class FileUploadResponse(BaseModel):
     filename: str
     content: str
     message: str
+
+
+class ChatResponse(BaseModel):
+    answer: str
+    cache_status: Optional[str] = None

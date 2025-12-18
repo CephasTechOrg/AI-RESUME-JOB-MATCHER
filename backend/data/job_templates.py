@@ -994,7 +994,7 @@ Requirements:
 - Evidence of traction (users, revenue, pilots, partnerships, etc.)
 - Strong ownership, resilience, and problem-solving skills
 - Ability to wear multiple hats in dynamic environments
-- Clear vision and communication of the venture’s value proposition
+- Clear vision and communication of the venture's value proposition
 - Resume focused on impact, execution, and learning"""
     },
     "product_design_intern": {
@@ -1018,37 +1018,209 @@ Requirements:
 - Resume aligned with design internship expectations"""
     },
     "software_engineer_intern": {
-"title": "Software Engineer Intern",
-"description": """Seeking a Software Engineer Intern studying Computer Science or any computing related course.
+        "title": "Software Engineer Intern - General",
+        "description": """General Software Engineering Intern expectations and guidance for all levels.
 
 Responsibilities:
-
-Write clean code for assigned features
-
-Test features and fix issues
-
-Work with senior engineers on tasks
-
-Use Git for version control
-
-Join team meetings and follow project tasks
-
-Learn new tools and contribute to the team
+- Learn and practice development workflows, Git basics, and team collaboration
+- Complete assigned tasks with guidance and mentorship
+- Practice version control fundamentals (clone, pull, commit, pull requests)
+- Assist with debugging, testing, and implementing features
+- Participate in code reviews and ask clarifying questions
+- Document learning and share progress with the team
 
 Requirements:
+- Currently enrolled in Computer Science, Engineering, or related program
+- Basic programming knowledge in at least one language
+- Familiarity with fundamental programming concepts
+- Some exposure to version control or development tools
+- Willingness to learn and adapt in a team environment
+- Strong communication and collaboration skills""",
+        "variants": {
+            "freshman": {
+                "title": "FRESHMAN SOFTWARE ENGINEERING INTERN",
+                "description": """(More flexible, forgiving, encourages learning -> scoring advantage > 90)
 
-Enrolled in a Computer Science or computing related program
+Responsibilities
+- Assist in writing simple, functional code under guidance
+- Fix minor issues and test basic components
+- Pair-program with senior engineers to learn workflows
+- Practice using Git for commits and pull requests
+- Attend team meetings to understand project structure
+- Ask questions, absorb knowledge, and document what you learn
+- Explore new tools, languages, or frameworks with mentorship
 
-Strong foundation in programming
+Requirements
+- Enrolled in a CS or related program (first-year level)
+- Basic understanding of programming (Python, JavaScript, or any language)
+- Familiarity with problem-solving and writing beginner-level code
+- Willingness to learn Git and follow engineering processes
+- Ability to take feedback and improve quickly
+- (Optional) Exposure to HTML/CSS/JS or Python -- not required
+- (Optional) Interest in web development, backend, or mobile"""
+            },
+            "sophomore": {
+                "title": "SOPHOMORE SOFTWARE ENGINEERING INTERN",
+                "description": """(More structured than freshman, still flexible -> requirements slightly higher)
 
-Experience with HTML, CSS, JavaScript, Python, or Java
+Responsibilities
+- Implement small features or components with some guidance
+- Debug code and write simple tests
+- Work with Git branches and participate in code reviews
+- Collaborate with engineers to plan tasks and estimate effort
+- Contribute to documentation for small features
+- Experiment with new tools or frameworks relevant to the project
 
-Basic understanding of databases
+Requirements
+- Enrolled in a CS or related program (second-year level)
+- Good understanding of at least one programming language
+- Experience with HTML/CSS/JS or Python/Java
+- Basic understanding of APIs, version control, and debugging
+- Ability to explain your problem-solving process
+- (Optional) Experience with databases or simple projects
+- (Optional) Familiarity with basic frontend or backend frameworks"""
+            },
+            "junior": {
+                "title": "JUNIOR SOFTWARE ENGINEERING INTERN",
+                "description": """(Close to the baseline general one -- almost equal to "standard")
 
-Ability to solve problems and work with a team
+Responsibilities
+- Build and maintain moderate-level features with minimal supervision
+- Write tests and ensure code quality through debugging
+- Participate actively in code reviews (giving and receiving feedback)
+- Follow Git workflows and contribute to collaborative branches
+- Work with cross-functional teams (design, QA, product)
+- Document features and contribute to internal knowledge bases
+- Explore optimizations or improvements in existing systems
 
-Strong interest in software development"""
-},
+Requirements
+- Enrolled in a CS or related program (third-year level)
+- Strong programming fundamentals and project experience
+- Working knowledge of JavaScript, Python, Java, or similar
+- Basic understanding of frontend or backend architecture
+- Experience using Git, debugging workflows, and writing testable code
+- Ability to work independently and communicate clearly
+- (Optional) Experience with frameworks (React, Node.js, Flask, Spring, etc.)
+- (Optional) Familiarity with cloud platforms or CI/CD tools"""
+            },
+            "senior": {
+                "title": "SENIOR SOFTWARE ENGINEERING INTERN",
+                "description": """(Most advanced -- harder requirements, reflects near-entry-level engineer)
+
+Responsibilities
+- Own features from design to implementation with limited supervision
+- Write high-quality, scalable, and maintainable code
+- Create and maintain unit tests, integration tests, and documentation
+- Lead small components or mini-projects in the codebase
+- Perform code reviews and mentor junior interns when necessary
+- Collaborate across teams to refine technical requirements
+- Investigate performance issues and propose engineering improvements
+
+Requirements
+- Final-year student in CS or related field
+- Strong competency in at least one backend or frontend technology
+- Solid debugging, testing, and Git workflow knowledge
+- Experience with databases, APIs, and basic system design
+- Ability to read and understand large codebases
+- Strong communication skills and ownership mindset
+- (Optional but advantageous) Experience with:
+  frameworks (React/Angular/Vue, Node.js, Django, Spring)
+  cloud services (AWS, GCP, Azure)
+  CI/CD pipelines"""
+            },
+        },
+    },
+    "software_engineer_intern_freshman": {
+        "title": "FRESHMAN SOFTWARE ENGINEERING INTERN",
+        "description": """(More flexible, forgiving, encourages learning -> scoring advantage > 90)
+
+Responsibilities
+- Assist in writing simple, functional code under guidance
+- Fix minor issues and test basic components
+- Pair-program with senior engineers to learn workflows
+- Practice using Git for commits and pull requests
+- Attend team meetings to understand project structure
+- Ask questions, absorb knowledge, and document what you learn
+- Explore new tools, languages, or frameworks with mentorship
+
+Requirements
+- Enrolled in a CS or related program (first-year level)
+- Basic understanding of programming (Python, JavaScript, or any language)
+- Familiarity with problem-solving and writing beginner-level code
+- Willingness to learn Git and follow engineering processes
+- Ability to take feedback and improve quickly
+- (Optional) Exposure to HTML/CSS/JS or Python -- not required
+- (Optional) Interest in web development, backend, or mobile"""
+    },
+    "software_engineer_intern_sophomore": {
+        "title": "SOPHOMORE SOFTWARE ENGINEERING INTERN",
+        "description": """(More structured than freshman, still flexible -> requirements slightly higher)
+
+Responsibilities
+- Implement small features or components with some guidance
+- Debug code and write simple tests
+- Work with Git branches and participate in code reviews
+- Collaborate with engineers to plan tasks and estimate effort
+- Contribute to documentation for small features
+- Experiment with new tools or frameworks relevant to the project
+
+Requirements
+- Enrolled in a CS or related program (second-year level)
+- Good understanding of at least one programming language
+- Experience with HTML/CSS/JS or Python/Java
+- Basic understanding of APIs, version control, and debugging
+- Ability to explain your problem-solving process
+- (Optional) Experience with databases or simple projects
+- (Optional) Familiarity with basic frontend or backend frameworks"""
+    },
+    "software_engineer_intern_junior": {
+        "title": "JUNIOR SOFTWARE ENGINEERING INTERN",
+        "description": """(Close to the baseline general one -- almost equal to "standard")
+
+Responsibilities
+- Build and maintain moderate-level features with minimal supervision
+- Write tests and ensure code quality through debugging
+- Participate actively in code reviews (giving and receiving feedback)
+- Follow Git workflows and contribute to collaborative branches
+- Work with cross-functional teams (design, QA, product)
+- Document features and contribute to internal knowledge bases
+- Explore optimizations or improvements in existing systems
+
+Requirements
+- Enrolled in a CS or related program (third-year level)
+- Strong programming fundamentals and project experience
+- Working knowledge of JavaScript, Python, Java, or similar
+- Basic understanding of frontend or backend architecture
+- Experience using Git, debugging workflows, and writing testable code
+- Ability to work independently and communicate clearly
+- (Optional) Experience with frameworks (React, Node.js, Flask, Spring, etc.)
+- (Optional) Familiarity with cloud platforms or CI/CD tools"""
+    },
+    "software_engineer_intern_senior": {
+        "title": "SENIOR SOFTWARE ENGINEERING INTERN",
+        "description": """(Most advanced -- harder requirements, reflects near-entry-level engineer)
+
+Responsibilities
+- Own features from design to implementation with limited supervision
+- Write high-quality, scalable, and maintainable code
+- Create and maintain unit tests, integration tests, and documentation
+- Lead small components or mini-projects in the codebase
+- Perform code reviews and mentor junior interns when necessary
+- Collaborate across teams to refine technical requirements
+- Investigate performance issues and propose engineering improvements
+
+Requirements
+- Final-year student in CS or related field
+- Strong competency in at least one backend or frontend technology
+- Solid debugging, testing, and Git workflow knowledge
+- Experience with databases, APIs, and basic system design
+- Ability to read and understand large codebases
+- Strong communication skills and ownership mindset
+- (Optional but advantageous) Experience with:
+  frameworks (React/Angular/Vue, Node.js, Django, Spring)
+  cloud services (AWS, GCP, Azure)
+  CI/CD pipelines"""
+    },
     "uiux_design_intern": {
         "title": "UX/UI Design Intern",
         "description": """We are evaluating a UX/UI Design Intern resume for user experience and interface design roles.
@@ -1069,4 +1241,192 @@ Requirements:
 - Strong communication and storytelling abilities
 - Resume tailored to UX/UI internship opportunities"""
     }
+}
+
+# Level-specific templates and bonus signals to enrich prompts and UI across roles.
+ROLE_LEVEL_TEMPLATES = {
+    "default": {
+        "levels": {
+            "junior": {
+                "requirements": [
+                    "Foundational knowledge of core tools and workflows",
+                    "Ability to follow guidance and ship scoped tasks",
+                    "Basic testing and debugging exposure",
+                ],
+                "responsibilities": [
+                    "Implement well-defined tasks with mentorship",
+                    "Document work and raise blockers early",
+                    "Pair with peers on code reviews and QA",
+                ],
+            },
+            "mid": {
+                "requirements": [
+                    "Own small features end-to-end with minimal guidance",
+                    "Apply testing, observability, and deployment hygiene",
+                    "Communicate timelines and trade-offs clearly",
+                ],
+                "responsibilities": [
+                    "Design, build, and iterate on features",
+                    "Improve reliability and performance of owned areas",
+                    "Mentor juniors via reviews and pairing",
+                ],
+            },
+            "senior": {
+                "requirements": [
+                    "Lead projects with ambiguous requirements",
+                    "Elevate quality with testing strategy and resilience",
+                    "Influence roadmap with data-driven decisions",
+                ],
+                "responsibilities": [
+                    "Drive cross-team delivery and unblock others",
+                    "Set coding standards and review for design quality",
+                    "Measure impact and improve system scalability",
+                ],
+            },
+        },
+        "bonus_signals": [
+            "Open-source contributions",
+            "Published articles or conference talks",
+            "Awards or scholarships",
+            "Certifications relevant to the role",
+        ],
+    },
+    "software_engineer": {
+        "levels": {
+            "junior": {
+                "requirements": [
+                    "Fluency in one primary language and Git workflows",
+                    "Comfort with unit tests and debugging basics",
+                    "Experience shipping small features or class projects",
+                ],
+                "responsibilities": [
+                    "Implement scoped tickets with tests",
+                    "Pair program and participate in code reviews",
+                    "Document decisions and trade-offs",
+                ],
+            },
+            "mid": {
+                "requirements": [
+                    "Own services or modules in production",
+                    "Design APIs with backward compatibility",
+                    "Instrument code with logging and metrics",
+                ],
+                "responsibilities": [
+                    "Lead feature delivery end-to-end",
+                    "Harden reliability with tests and alerts",
+                    "Coach interns/juniors during reviews",
+                ],
+            },
+            "senior": {
+                "requirements": [
+                    "Lead system design for multi-team projects",
+                    "Optimize performance and cost at scale",
+                    "Set testing strategy (unit, integration, e2e)",
+                ],
+                "responsibilities": [
+                    "Drive cross-functional delivery",
+                    "Uphold security, privacy, and compliance considerations",
+                    "Mentor and develop peers with actionable feedback",
+                ],
+            },
+        },
+        "bonus_signals": [
+            "Open-source libraries or maintainer status",
+            "Cloud certifications (AWS/GCP/Azure)",
+            "Published system design blogs or talks",
+            "Hackathon wins or patents",
+        ],
+    },
+    "data_scientist": {
+        "levels": {
+            "junior": {
+                "requirements": [
+                    "Strong SQL and exploratory data analysis",
+                    "Basic model building with validation",
+                    "Clear communication of findings",
+                ],
+                "responsibilities": [
+                    "Clean datasets and build baselines",
+                    "Visualize trends and anomalies",
+                    "Partner with engineers on data pipelines",
+                ],
+            },
+            "mid": {
+                "requirements": [
+                    "Productionize models with monitoring",
+                    "Design experiments and A/B tests",
+                    "Feature engineering at scale",
+                ],
+                "responsibilities": [
+                    "Ship models with rollback/alerting paths",
+                    "Translate insights into roadmap proposals",
+                    "Collaborate on data quality and governance",
+                ],
+            },
+            "senior": {
+                "requirements": [
+                    "Lead modeling strategy for a domain",
+                    "Balance business impact with technical rigor",
+                    "Drive model fairness and drift mitigation",
+                ],
+                "responsibilities": [
+                    "Influence product metrics and guardrails",
+                    "Review experiments and causal inference plans",
+                    "Mentor scientists on methodology",
+                ],
+            },
+        },
+        "bonus_signals": [
+            "Published papers or Kaggle medals",
+            "ML certifications or MOOCs with capstones",
+            "Open-source notebooks or reproducible demos",
+            "Talks on experimentation or ML fairness",
+        ],
+    },
+    "product_manager": {
+        "levels": {
+            "junior": {
+                "requirements": [
+                    "Customer discovery and requirement gathering",
+                    "Backlog grooming and sprint participation",
+                    "Basic analytics proficiency",
+                ],
+                "responsibilities": [
+                    "Write clear user stories and acceptance criteria",
+                    "Validate problems with users and data",
+                    "Partner with design/engineering on delivery",
+                ],
+            },
+            "mid": {
+                "requirements": [
+                    "Own roadmap for a product surface",
+                    "Define and monitor success metrics",
+                    "Run experiments and iterate with evidence",
+                ],
+                "responsibilities": [
+                    "Prioritize trade-offs with stakeholders",
+                    "Align cross-functional teams on timelines",
+                    "Communicate launches and learnings",
+                ],
+            },
+            "senior": {
+                "requirements": [
+                    "Lead multi-team initiatives",
+                    "Shape long-term vision with market insight",
+                    "Mentor PMs and build execution rituals",
+                ],
+                "responsibilities": [
+                    "Drive strategy docs and decision records",
+                    "Secure resourcing and manage risk",
+                    "Set experimentation standards and governance",
+                ],
+            },
+        },
+        "bonus_signals": [
+            "Conference talks or thought-leadership blogs",
+            "Prior founder experience",
+            "Certifications (PSM/CSPO/PMC)",
+            "User research publications or case studies",
+        ],
+    },
 }

@@ -1598,3 +1598,122 @@ textarea {
         padding-left: 20px;
     }
 }
+
+/* Level + quality additions */
+.keyword.match {
+    background: #ecfdf3;
+    color: #15803d;
+    border: 1px solid #bbf7d0;
+    position: relative;
+}
+
+.keyword.match:hover::after {
+    content: attr(data-tip);
+    position: absolute;
+    top: 110%;
+    left: 0;
+    background: #0f172a;
+    color: #fff;
+    padding: 8px 10px;
+    border-radius: 8px;
+    font-size: 12px;
+    white-space: pre-line;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.25);
+    z-index: 10;
+    min-width: 220px;
+}
+
+.level-panel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    padding: 12px;
+    border: 1px dashed #cbd5e1;
+    border-radius: 12px;
+    background: #f8fafc;
+}
+
+.level-panel h4 {
+    margin: 0 0 8px 0;
+}
+
+.level-panel ul {
+    margin: 0;
+    padding-left: 18px;
+    color: #475569;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.quality-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 8px;
+}
+
+.quality-list li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
+    border-radius: 10px;
+    padding: 10px 12px;
+    color: #9a3412;
+}
+
+.quality-list li::before {
+    content: "⚠";
+    font-size: 12px;
+}
+
+.comparison-card {
+    border: 1px solid #e2e8f0;
+    padding: 12px;
+    border-radius: 12px;
+    background: #f8fafc;
+    margin-bottom: 12px;
+}
+
+.comparison-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.comparison-controls input[type="range"] {
+    flex: 1;
+}
+
+#comparison-delta {
+    margin: 8px 0 0 0;
+    color: #0f172a;
+    font-weight: 600;
+}
+
+.chat-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.chat-box textarea {
+    width: 100%;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 14px;
+    resize: vertical;
+    min-height: 80px;
+}
+
+.chat-response {
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 12px;
+    min-height: 60px;
+    white-space: pre-line;
+}
